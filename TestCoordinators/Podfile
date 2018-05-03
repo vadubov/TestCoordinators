@@ -1,0 +1,13 @@
+platform :ios, '10.0'
+inhibit_all_warnings!
+
+target 'TestCoordinators' do
+  use_frameworks!
+  
+  pod 'Reusable'
+
+  target 'TestCoordinatorsTests' do
+    inherit! :search_paths
+
+  end
+end
