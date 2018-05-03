@@ -31,6 +31,14 @@
 		2C6E72D220930FC800F8FD40 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C6E72D120930FC800F8FD40 /* Favorites.storyboard */; };
 		2C6E72D420930FF400F8FD40 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6E72D320930FF400F8FD40 /* Storyboard.swift */; };
 		2C6E72D62093103300F8FD40 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6E72D52093103300F8FD40 /* Defaults.swift */; };
+		2CC62B6A209B469E005AB657 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC62B69209B469E005AB657 /* OnboardingViewController.swift */; };
+		2CC62B6D209B46FD005AB657 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC62B6C209B46FD005AB657 /* Onboarding.storyboard */; };
+		2CC62B70209B4E0F005AB657 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC62B6F209B4E0F005AB657 /* LoginViewController.swift */; };
+		2CC62B72209B4E43005AB657 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC62B71209B4E43005AB657 /* RegistrationViewController.swift */; };
+		2CC62B74209B4E6C005AB657 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC62B73209B4E6C005AB657 /* ForgotPasswordViewController.swift */; };
+		2CC62B76209B4EE6005AB657 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC62B75209B4EE6005AB657 /* Auth.storyboard */; };
+		2CC62B78209B4F3B005AB657 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC62B77209B4F3B005AB657 /* ProfileViewController.swift */; };
+		2CC62B7A209B4F64005AB657 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC62B79209B4F64005AB657 /* Profile.storyboard */; };
 		2CEEEBBF2094907C004C60ED /* LaunchInstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEEBBE2094907C004C60ED /* LaunchInstructor.swift */; };
 		2CEEEBC22094948F004C60ED /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEEBC12094948F004C60ED /* SplashViewController.swift */; };
 		2CEEEBC4209494DF004C60ED /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CEEEBC3209494DF004C60ED /* Splash.storyboard */; };
@@ -79,6 +87,14 @@
 		2C6E72D120930FC800F8FD40 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		2C6E72D320930FF400F8FD40 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		2C6E72D52093103300F8FD40 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		2CC62B69209B469E005AB657 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		2CC62B6C209B46FD005AB657 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		2CC62B6F209B4E0F005AB657 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2CC62B71209B4E43005AB657 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		2CC62B73209B4E6C005AB657 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		2CC62B75209B4EE6005AB657 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		2CC62B77209B4F3B005AB657 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2CC62B79209B4F64005AB657 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		2CEEEBBE2094907C004C60ED /* LaunchInstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInstructor.swift; sourceTree = "<group>"; };
 		2CEEEBC12094948F004C60ED /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		2CEEEBC3209494DF004C60ED /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
@@ -180,6 +196,7 @@
 				2C6E72B720930C6300F8FD40 /* Auth */,
 				2C6E72BA20930C6300F8FD40 /* Feed */,
 				2C6E72B920930C6300F8FD40 /* Favorites */,
+				2CC62B6E209B4DDE005AB657 /* Profile */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -187,6 +204,10 @@
 		2C6E72B720930C6300F8FD40 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				2CC62B75209B4EE6005AB657 /* Auth.storyboard */,
+				2CC62B6F209B4E0F005AB657 /* LoginViewController.swift */,
+				2CC62B71209B4E43005AB657 /* RegistrationViewController.swift */,
+				2CC62B73209B4E6C005AB657 /* ForgotPasswordViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -224,6 +245,8 @@
 		2C6E72BB20930C6300F8FD40 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				2CC62B6C209B46FD005AB657 /* Onboarding.storyboard */,
+				2CC62B69209B469E005AB657 /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -257,6 +280,15 @@
 			children = (
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2CC62B6E209B4DDE005AB657 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2CC62B79209B4F64005AB657 /* Profile.storyboard */,
+				2CC62B77209B4F3B005AB657 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		2CEEEBC02094945B004C60ED /* Splash */ = {
@@ -365,9 +397,12 @@
 			files = (
 				2C6E72A12093099400F8FD40 /* LaunchScreen.storyboard in Resources */,
 				2C6E729E2093099400F8FD40 /* Assets.xcassets in Resources */,
+				2CC62B7A209B4F64005AB657 /* Profile.storyboard in Resources */,
 				2C6E72D220930FC800F8FD40 /* Favorites.storyboard in Resources */,
+				2CC62B6D209B46FD005AB657 /* Onboarding.storyboard in Resources */,
 				2CEEEBC4209494DF004C60ED /* Splash.storyboard in Resources */,
 				2C6E72D020930FBD00F8FD40 /* Feed.storyboard in Resources */,
+				2CC62B76209B4EE6005AB657 /* Auth.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,12 +480,16 @@
 				2C6E72C020930C6300F8FD40 /* Debug.swift in Sources */,
 				2C6E72CC20930E1100F8FD40 /* Presentable.swift in Sources */,
 				2C11E47E20933C0200C6D5E7 /* NavigationRouter.swift in Sources */,
+				2CC62B70209B4E0F005AB657 /* LoginViewController.swift in Sources */,
 				2C6E72C620930D6300F8FD40 /* AbstractViewController.swift in Sources */,
 				2C11E48020933DCF00C6D5E7 /* AppCoordinator.swift in Sources */,
 				2C11E47520932E1A00C6D5E7 /* DeepLink.swift in Sources */,
 				2C11E48220935E1300C6D5E7 /* FeedCoordinator.swift in Sources */,
 				2C11E47820933BB200C6D5E7 /* RouterType.swift in Sources */,
 				2C6E72CA20930DAD00F8FD40 /* FavoritesViewController.swift in Sources */,
+				2CC62B78209B4F3B005AB657 /* ProfileViewController.swift in Sources */,
+				2CC62B6A209B469E005AB657 /* OnboardingViewController.swift in Sources */,
+				2CC62B74209B4E6C005AB657 /* ForgotPasswordViewController.swift in Sources */,
 				2CEEEBBF2094907C004C60ED /* LaunchInstructor.swift in Sources */,
 				2C6E72C420930D4000F8FD40 /* TabBarController.swift in Sources */,
 				2C11E47A20933BCB00C6D5E7 /* AppRouter.swift in Sources */,
@@ -458,6 +497,7 @@
 				2C6E72C220930D2000F8FD40 /* NavigationController.swift in Sources */,
 				2C6E72D420930FF400F8FD40 /* Storyboard.swift in Sources */,
 				2C6E72C820930D9B00F8FD40 /* FeedViewController.swift in Sources */,
+				2CC62B72209B4E43005AB657 /* RegistrationViewController.swift in Sources */,
 				2C6E72972093099200F8FD40 /* AppDelegate.swift in Sources */,
 				2C6E72CE20930E7500F8FD40 /* Coordinator.swift in Sources */,
 				2C11E48420935FE400C6D5E7 /* FavoritesCoordinator.swift in Sources */,

@@ -14,6 +14,9 @@ enum LaunchInstructor {
     case onboarding, main
 
     static func configure(configuration: LaunchInstructorConfiguration = LaunchInstructorConfiguration.current()) -> LaunchInstructor {
+        if !configuration.onboardingWasShown {
+            return .onboarding
+        }
         return .main
     }
 }

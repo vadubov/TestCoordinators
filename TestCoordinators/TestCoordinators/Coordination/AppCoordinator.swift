@@ -7,6 +7,8 @@ class AppCoordinator: RootCoordinator {
         return LaunchInstructor.configure()
     }
 
+    private var deeplink: DeepLink?
+
     enum Tab: Int {
         case feed, favorites
     }
@@ -25,24 +27,43 @@ class AppCoordinator: RootCoordinator {
     private typealias TabCoordinatorBox = (tab: Tab, coordinator: NavigationCoordinator)
 
     override func start(with deeplink: DeepLink?) {
-        if let deeplink = deeplink {
-            switch deeplink {
-            default:
-                runSplash()
-            }
-        } else {
-            switch instructor {
-            default:
-                runSplash()
-            }
-        }
+        self.deeplink = deeplink
+        runSplash()
     }
 
     func runSplash() {
         let controller = SplashViewController.instantiate()
+
         controller.onFinish = { [weak self] in
+            if let deeplink = self?.deeplink {
+                switch deeplink {
+                default:
+                    self?.runMainFlow()
+                }
+            } else {
+                switch self?.instructor {
+                case .onboarding?:
+                    self?.runOnboarding()
+                default:
+                    self?.runMainFlow()
+                }
+            }
+        }
+        
+        router.setRootModule(controller)
+    }
+
+    func runOnboarding() {
+        let controller = OnboardingViewController.instantiate()
+
+        controller.onSkip = { [weak self] in
             self?.runMainFlow()
         }
+
+        controller.onDone = { [weak self] in
+            self?.runMainFlow()
+        }
+
         router.setRootModule(controller)
     }
 
