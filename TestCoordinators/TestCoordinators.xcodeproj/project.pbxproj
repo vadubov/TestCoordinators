@@ -15,6 +15,12 @@
 		2C11E48220935E1300C6D5E7 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11E48120935E1300C6D5E7 /* FeedCoordinator.swift */; };
 		2C11E48420935FE400C6D5E7 /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11E48320935FE400C6D5E7 /* FavoritesCoordinator.swift */; };
 		2C11E4862093669100C6D5E7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11E4852093669100C6D5E7 /* Utils.swift */; };
+		2C677F85209C510000CFE940 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C677F84209C510000CFE940 /* User.swift */; };
+		2C677F87209C511400CFE940 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C677F86209C511400CFE940 /* Session.swift */; };
+		2C677F89209C520600CFE940 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C677F88209C520600CFE940 /* AuthCoordinator.swift */; };
+		2C677F8B209C6E9E00CFE940 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C677F8A209C6E9E00CFE940 /* ProfileCoordinator.swift */; };
+		2C677F8D209C72CD00CFE940 /* AuthFlowRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C677F8C209C72CD00CFE940 /* AuthFlowRunner.swift */; };
+		2C677F8F209C733200CFE940 /* ProfileFlowRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C677F8E209C733200CFE940 /* ProfileFlowRunner.swift */; };
 		2C6E72972093099200F8FD40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6E72962093099200F8FD40 /* AppDelegate.swift */; };
 		2C6E729E2093099400F8FD40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C6E729D2093099400F8FD40 /* Assets.xcassets */; };
 		2C6E72A12093099400F8FD40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C6E729F2093099400F8FD40 /* LaunchScreen.storyboard */; };
@@ -67,6 +73,12 @@
 		2C11E48120935E1300C6D5E7 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
 		2C11E48320935FE400C6D5E7 /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
 		2C11E4852093669100C6D5E7 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		2C677F84209C510000CFE940 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2C677F86209C511400CFE940 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		2C677F88209C520600CFE940 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		2C677F8A209C6E9E00CFE940 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		2C677F8C209C72CD00CFE940 /* AuthFlowRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowRunner.swift; sourceTree = "<group>"; };
+		2C677F8E209C733200CFE940 /* ProfileFlowRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFlowRunner.swift; sourceTree = "<group>"; };
 		2C6E72932093099200F8FD40 /* TestCoordinators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCoordinators.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6E72962093099200F8FD40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6E729D2093099400F8FD40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +155,22 @@
 			path = Routers;
 			sourceTree = "<group>";
 		};
+		2C677F82209C50E900CFE940 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				2C677F86209C511400CFE940 /* Session.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		2C677F83209C50F400CFE940 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C677F84209C510000CFE940 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2C6E728A2093099200F8FD40 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +194,8 @@
 		2C6E72952093099200F8FD40 /* TestCoordinators */ = {
 			isa = PBXGroup;
 			children = (
+				2C677F82209C50E900CFE940 /* Session */,
+				2C677F83209C50F400CFE940 /* Models */,
 				2C6E72BE20930C6300F8FD40 /* Coordination */,
 				2C6E72B620930C6300F8FD40 /* UI */,
 				2C6E72BC20930C6300F8FD40 /* Utils */,
@@ -205,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				2CC62B75209B4EE6005AB657 /* Auth.storyboard */,
+				2C677F88209C520600CFE940 /* AuthCoordinator.swift */,
 				2CC62B6F209B4E0F005AB657 /* LoginViewController.swift */,
 				2CC62B71209B4E43005AB657 /* RegistrationViewController.swift */,
 				2CC62B73209B4E6C005AB657 /* ForgotPasswordViewController.swift */,
@@ -218,6 +249,8 @@
 				2C6E72C120930D2000F8FD40 /* NavigationController.swift */,
 				2C6E72C320930D4000F8FD40 /* TabBarController.swift */,
 				2C6E72C520930D6300F8FD40 /* AbstractViewController.swift */,
+				2C677F8C209C72CD00CFE940 /* AuthFlowRunner.swift */,
+				2C677F8E209C733200CFE940 /* ProfileFlowRunner.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -286,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				2CC62B79209B4F64005AB657 /* Profile.storyboard */,
+				2C677F8A209C6E9E00CFE940 /* ProfileCoordinator.swift */,
 				2CC62B77209B4F3B005AB657 /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -477,23 +511,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C677F87209C511400CFE940 /* Session.swift in Sources */,
 				2C6E72C020930C6300F8FD40 /* Debug.swift in Sources */,
 				2C6E72CC20930E1100F8FD40 /* Presentable.swift in Sources */,
 				2C11E47E20933C0200C6D5E7 /* NavigationRouter.swift in Sources */,
 				2CC62B70209B4E0F005AB657 /* LoginViewController.swift in Sources */,
 				2C6E72C620930D6300F8FD40 /* AbstractViewController.swift in Sources */,
+				2C677F85209C510000CFE940 /* User.swift in Sources */,
 				2C11E48020933DCF00C6D5E7 /* AppCoordinator.swift in Sources */,
 				2C11E47520932E1A00C6D5E7 /* DeepLink.swift in Sources */,
 				2C11E48220935E1300C6D5E7 /* FeedCoordinator.swift in Sources */,
 				2C11E47820933BB200C6D5E7 /* RouterType.swift in Sources */,
 				2C6E72CA20930DAD00F8FD40 /* FavoritesViewController.swift in Sources */,
 				2CC62B78209B4F3B005AB657 /* ProfileViewController.swift in Sources */,
+				2C677F89209C520600CFE940 /* AuthCoordinator.swift in Sources */,
 				2CC62B6A209B469E005AB657 /* OnboardingViewController.swift in Sources */,
+				2C677F8D209C72CD00CFE940 /* AuthFlowRunner.swift in Sources */,
 				2CC62B74209B4E6C005AB657 /* ForgotPasswordViewController.swift in Sources */,
 				2CEEEBBF2094907C004C60ED /* LaunchInstructor.swift in Sources */,
 				2C6E72C420930D4000F8FD40 /* TabBarController.swift in Sources */,
 				2C11E47A20933BCB00C6D5E7 /* AppRouter.swift in Sources */,
 				2CEEEBC22094948F004C60ED /* SplashViewController.swift in Sources */,
+				2C677F8F209C733200CFE940 /* ProfileFlowRunner.swift in Sources */,
 				2C6E72C220930D2000F8FD40 /* NavigationController.swift in Sources */,
 				2C6E72D420930FF400F8FD40 /* Storyboard.swift in Sources */,
 				2C6E72C820930D9B00F8FD40 /* FeedViewController.swift in Sources */,
@@ -502,6 +541,7 @@
 				2C6E72CE20930E7500F8FD40 /* Coordinator.swift in Sources */,
 				2C11E48420935FE400C6D5E7 /* FavoritesCoordinator.swift in Sources */,
 				2C11E4862093669100C6D5E7 /* Utils.swift in Sources */,
+				2C677F8B209C6E9E00CFE940 /* ProfileCoordinator.swift in Sources */,
 				2C6E72D62093103300F8FD40 /* Defaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

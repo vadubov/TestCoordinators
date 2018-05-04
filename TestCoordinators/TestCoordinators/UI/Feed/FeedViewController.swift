@@ -2,8 +2,14 @@
 import UIKit
 import Reusable
 
-class FeedViewController: AbstractViewController, StoryboardSceneBased {
+protocol FeedControllerOutput: class {
+    var onClickProfile: (() -> Void)? { get set }
+}
+
+class FeedViewController: AbstractViewController, StoryboardSceneBased, FeedControllerOutput {
     static var sceneStoryboard: UIStoryboard = Storyboard.feed
+
+    var onClickProfile: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,4 +18,7 @@ class FeedViewController: AbstractViewController, StoryboardSceneBased {
         DLog("")
     }
 
+    @IBAction private func profileAction(_ sender: UIBarButtonItem) {
+        onClickProfile?()
+    }
 }

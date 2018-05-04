@@ -13,7 +13,26 @@ class AppCoordinator: RootCoordinator {
         case feed, favorites
     }
 
-    private let tabBarController = TabBarController()
+    private lazy var tabBarController: TabBarController = {
+        let controller = TabBarController()
+
+        controller.onShouldSelectViewController = { [weak self] (controller) -> Bool in
+            if let index = self?.tabBarController.viewControllers?.index(of: controller), let tab = Tab(rawValue: index) {
+                if tab == .favorites, !Session.shared.isAuthorized {
+                    self?.runAuthFlow() { [weak self] in
+                        if Session.shared.isAuthorized {
+                            self?.tabBarController.selectedIndex = tab.rawValue
+                        }
+                    }
+                    return false
+                }
+            }
+            return true
+        }
+        
+        return controller
+    }()
+
     private var tabs: [Tab: NavigationCoordinator] = [:]
 
     var activeTabCoordinator: NavigationCoordinator? {

@@ -1,7 +1,7 @@
 
 import UIKit
 
-enum DeepLink {
+public enum DeepLink {
     case onboarding
     case login
     case registration

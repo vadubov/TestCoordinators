@@ -1,14 +1,13 @@
 
 import UIKit
 
-public class NavigationRouter: NSObject, RouterType {
+public class NavigationRouter: NSObject, NavigationRouterType {
     var navigationController: UINavigationController
 
-    var rootViewController: UIViewController? {
+    public var rootViewController: UIViewController? {
         return navigationController.viewControllers.first
     }
 
-    typealias FinishHandler = () -> Void
     private var finishHandlers: [UIViewController: FinishHandler] = [:]
 
     init(with navigationController: UINavigationController = UINavigationController()) {
@@ -19,26 +18,6 @@ public class NavigationRouter: NSObject, RouterType {
 
     public func toPresentable() -> UIViewController {
         return navigationController
-    }
-
-    public func present(_ module: Presentable) {
-        present(module, animated: true)
-    }
-
-    public func present(_ module: Presentable, animated: Bool) {
-        navigationController.present(module.toPresentable(), animated: animated, completion: nil)
-    }
-
-    public func dismissModule() {
-        dismissModule(animated: true)
-    }
-
-    public func dismissModule(animated: Bool) {
-        dismissModule(animated: animated, completion: nil)
-    }
-
-    public func dismissModule(animated: Bool, completion: (() -> Void)?) {
-        navigationController.dismiss(animated: animated, completion: completion)
     }
 
     public func push(_ module: Presentable) {

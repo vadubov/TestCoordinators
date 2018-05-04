@@ -1,7 +1,7 @@
 
 import UIKit
 
-public class AppRouter: RouterType {
+public class AppRouter: PresentationRouterType {
     let window: UIWindow
 
     init(with window: UIWindow) {
@@ -14,6 +14,7 @@ public class AppRouter: RouterType {
     }
 
     public func toPresentable() -> UIViewController {
+        assert(window.rootViewController != nil, "setRootModule must be already called at this moment")
         return window.rootViewController!
     }
 }

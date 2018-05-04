@@ -12,7 +12,7 @@ public protocol CoordinatorType: class, Presentable {
 }
 
 public class Coordinator<DeepLinkType, R: RouterType>: NSObject, CoordinatorType {
-    public var router: R
+    public let router: R
     public var childCoordinators: [Coordinator<DeepLinkType, NavigationRouter>] = []
 
     public init(with router: R) {
