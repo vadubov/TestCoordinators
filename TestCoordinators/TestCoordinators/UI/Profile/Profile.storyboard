@@ -17,7 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="DCc-m4-Mcc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yz-YC-9QC">
+                                <rect key="frame" x="16" y="84" width="30" height="30"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="editAction:" destination="kJZ-FN-EFb" eventType="touchUpInside" id="OHk-CL-auZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvK-ph-ePf">
+                                <rect key="frame" x="16" y="122" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutAction:" destination="kJZ-FN-EFb" eventType="touchUpInside" id="8aa-ZI-85n"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5yz-YC-9QC" firstAttribute="leading" secondItem="aTK-cu-KIy" secondAttribute="leading" constant="16" id="baD-05-4jw"/>
+                            <constraint firstItem="kvK-ph-ePf" firstAttribute="leading" secondItem="aTK-cu-KIy" secondAttribute="leading" constant="16" id="fze-lW-3f5"/>
+                            <constraint firstItem="kvK-ph-ePf" firstAttribute="top" secondItem="5yz-YC-9QC" secondAttribute="bottom" constant="8" id="lKF-aa-KTY"/>
+                            <constraint firstItem="5yz-YC-9QC" firstAttribute="top" secondItem="aTK-cu-KIy" secondAttribute="top" constant="20" id="nEE-J5-KWL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aTK-cu-KIy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" largeTitleDisplayMode="always" id="wFw-RO-hD1">
@@ -32,6 +54,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="clY-lp-R0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-231" y="107"/>
+        </scene>
+        <!--Edit Profile-->
+        <scene sceneID="2NM-NY-cvG">
+            <objects>
+                <viewController storyboardIdentifier="EditProfileViewController" id="EvW-Lc-z13" customClass="EditProfileViewController" customModule="TestCoordinators" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ld3-Tp-3wb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVh-hb-fPk">
+                                <rect key="frame" x="16" y="20" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveAction:" destination="EvW-Lc-z13" eventType="touchUpInside" id="KjY-kM-2fW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yVh-hb-fPk" firstAttribute="leading" secondItem="r2N-Od-rMJ" secondAttribute="leading" constant="16" id="abh-at-vZJ"/>
+                            <constraint firstItem="yVh-hb-fPk" firstAttribute="top" secondItem="r2N-Od-rMJ" secondAttribute="top" constant="20" id="qek-TW-4Hw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r2N-Od-rMJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="AhF-8E-SkS"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yl5-rW-QjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="535" y="107"/>
         </scene>
     </scenes>
 </document>

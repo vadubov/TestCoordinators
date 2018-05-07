@@ -21,6 +21,26 @@ class AuthCoordinator: NavigationCoordinator, AuthCoordinatorOutput {
             self?.onFinish?()
         }
 
+        controller.onClickForgotPassword = { [weak self] in
+            let controller = ForgotPasswordViewController.instantiate()
+
+            controller.onSend = { [weak self] in
+                self?.router.popModule()
+            }
+
+            self?.router.push(controller)
+        }
+
+        controller.onClickRegister = { [weak self] in
+            let controller = RegistrationViewController.instantiate()
+
+            controller.onRegister = { [weak self] in
+                self?.onFinish?()
+            }
+            
+            self?.router.push(controller)
+        }
+
         router.setRootModule(controller, hideBar: true)
     }
 }

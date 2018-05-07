@@ -23,6 +23,11 @@ class LoginViewController: AbstractViewController, StoryboardSceneBased, LoginCo
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
     @IBAction private func loginAction(_ sender: UIButton) {
         Session.shared.user = User()
         onLogin?()

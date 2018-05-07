@@ -37,6 +37,7 @@
 		2C6E72D220930FC800F8FD40 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C6E72D120930FC800F8FD40 /* Favorites.storyboard */; };
 		2C6E72D420930FF400F8FD40 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6E72D320930FF400F8FD40 /* Storyboard.swift */; };
 		2C6E72D62093103300F8FD40 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6E72D52093103300F8FD40 /* Defaults.swift */; };
+		2C706DA520A051AB00970FE7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C706DA420A051AB00970FE7 /* EditProfileViewController.swift */; };
 		2CC62B6A209B469E005AB657 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC62B69209B469E005AB657 /* OnboardingViewController.swift */; };
 		2CC62B6D209B46FD005AB657 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC62B6C209B46FD005AB657 /* Onboarding.storyboard */; };
 		2CC62B70209B4E0F005AB657 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC62B6F209B4E0F005AB657 /* LoginViewController.swift */; };
@@ -99,6 +100,7 @@
 		2C6E72D120930FC800F8FD40 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		2C6E72D320930FF400F8FD40 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		2C6E72D52093103300F8FD40 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		2C706DA420A051AB00970FE7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		2CC62B69209B469E005AB657 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2CC62B6C209B46FD005AB657 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		2CC62B6F209B4E0F005AB657 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				2CC62B79209B4F64005AB657 /* Profile.storyboard */,
 				2C677F8A209C6E9E00CFE940 /* ProfileCoordinator.swift */,
 				2CC62B77209B4F3B005AB657 /* ProfileViewController.swift */,
+				2C706DA420A051AB00970FE7 /* EditProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				2C11E47520932E1A00C6D5E7 /* DeepLink.swift in Sources */,
 				2C11E48220935E1300C6D5E7 /* FeedCoordinator.swift in Sources */,
 				2C11E47820933BB200C6D5E7 /* RouterType.swift in Sources */,
+				2C706DA520A051AB00970FE7 /* EditProfileViewController.swift in Sources */,
 				2C6E72CA20930DAD00F8FD40 /* FavoritesViewController.swift in Sources */,
 				2CC62B78209B4F3B005AB657 /* ProfileViewController.swift in Sources */,
 				2C677F89209C520600CFE940 /* AuthCoordinator.swift in Sources */,

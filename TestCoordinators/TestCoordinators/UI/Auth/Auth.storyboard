@@ -65,31 +65,61 @@
             </objects>
             <point key="canvasLocation" x="-354" y="88"/>
         </scene>
-        <!--Registration View Controller-->
+        <!--Register-->
         <scene sceneID="l4d-TK-Exq">
             <objects>
                 <viewController storyboardIdentifier="RegistrationViewController" id="hme-Fi-9WF" customClass="RegistrationViewController" customModule="TestCoordinators" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FXe-Hm-Jkb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DuT-0r-LRw">
+                                <rect key="frame" x="16" y="0.0" width="57" height="30"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="registerAction:" destination="hme-Fi-9WF" eventType="touchUpInside" id="non-4z-2xh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DuT-0r-LRw" firstAttribute="leading" secondItem="aSf-tw-GBr" secondAttribute="leading" constant="16" id="Em6-oJ-KMQ"/>
+                            <constraint firstItem="DuT-0r-LRw" firstAttribute="top" secondItem="aSf-tw-GBr" secondAttribute="top" id="sNY-lJ-RWU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aSf-tw-GBr"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Register" id="o5n-JI-4QA"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qa6-0O-bJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="468" y="88"/>
         </scene>
-        <!--Forgot Password View Controller-->
+        <!--Forgot Password-->
         <scene sceneID="v5E-IZ-hU9">
             <objects>
                 <viewController storyboardIdentifier="ForgotPasswordViewController" id="k7j-BW-k5J" customClass="ForgotPasswordViewController" customModule="TestCoordinators" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qHU-TJ-ZmB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROb-O6-gka">
+                                <rect key="frame" x="16" y="64" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendAction:" destination="k7j-BW-k5J" eventType="touchUpInside" id="FGd-lg-ezj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ROb-O6-gka" firstAttribute="top" secondItem="Y8D-YI-Y0y" secondAttribute="top" id="Fr3-P4-Tnv"/>
+                            <constraint firstItem="ROb-O6-gka" firstAttribute="leading" secondItem="Y8D-YI-Y0y" secondAttribute="leading" constant="16" id="X0t-ux-eYq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Y8D-YI-Y0y"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Forgot Password" id="56A-Ju-HC2"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="utu-GK-fbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

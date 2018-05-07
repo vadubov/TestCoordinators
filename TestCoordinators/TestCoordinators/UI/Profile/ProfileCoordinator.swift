@@ -17,6 +17,20 @@ class ProfileCoordinator: NavigationCoordinator, ProfileCoordinatorOutput {
             self?.onFinish?()
         }
 
+        controller.onClickEdit = { [weak self] in
+            let controller = EditProfileViewController.instantiate()
+
+            controller.onSave = { [weak self] in
+                self?.router.popModule()
+            }
+
+            self?.router.push(controller)
+        }
+
+        controller.onLogout = { [weak self] in
+            self?.onFinish?()
+        }
+
         router.setRootModule(controller)
     }
 }
