@@ -46,6 +46,11 @@
 		2CC62B76209B4EE6005AB657 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC62B75209B4EE6005AB657 /* Auth.storyboard */; };
 		2CC62B78209B4F3B005AB657 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC62B77209B4F3B005AB657 /* ProfileViewController.swift */; };
 		2CC62B7A209B4F64005AB657 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC62B79209B4F64005AB657 /* Profile.storyboard */; };
+		2CC7EC9520A1B95200C9B17B /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EC9420A1B95200C9B17B /* FeedItem.swift */; };
+		2CC7EC9720A1B9B000C9B17B /* FeedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EC9620A1B9B000C9B17B /* FeedItemTableViewCell.swift */; };
+		2CC7EC9920A1BA0900C9B17B /* FeedControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EC9820A1BA0900C9B17B /* FeedControllerViewModel.swift */; };
+		2CC7EC9B20A1C48700C9B17B /* FeedItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EC9A20A1C48700C9B17B /* FeedItemDetailsViewController.swift */; };
+		2CC7EC9D20A1C4C300C9B17B /* FeedItemDetailsControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EC9C20A1C4C300C9B17B /* FeedItemDetailsControllerViewModel.swift */; };
 		2CEEEBBF2094907C004C60ED /* LaunchInstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEEBBE2094907C004C60ED /* LaunchInstructor.swift */; };
 		2CEEEBC22094948F004C60ED /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEEBC12094948F004C60ED /* SplashViewController.swift */; };
 		2CEEEBC4209494DF004C60ED /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CEEEBC3209494DF004C60ED /* Splash.storyboard */; };
@@ -109,6 +114,11 @@
 		2CC62B75209B4EE6005AB657 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		2CC62B77209B4F3B005AB657 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2CC62B79209B4F64005AB657 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		2CC7EC9420A1B95200C9B17B /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		2CC7EC9620A1B9B000C9B17B /* FeedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemTableViewCell.swift; sourceTree = "<group>"; };
+		2CC7EC9820A1BA0900C9B17B /* FeedControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedControllerViewModel.swift; sourceTree = "<group>"; };
+		2CC7EC9A20A1C48700C9B17B /* FeedItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemDetailsViewController.swift; sourceTree = "<group>"; };
+		2CC7EC9C20A1C4C300C9B17B /* FeedItemDetailsControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemDetailsControllerViewModel.swift; sourceTree = "<group>"; };
 		2CEEEBBE2094907C004C60ED /* LaunchInstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInstructor.swift; sourceTree = "<group>"; };
 		2CEEEBC12094948F004C60ED /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		2CEEEBC3209494DF004C60ED /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
@@ -169,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				2C677F84209C510000CFE940 /* User.swift */,
+				2CC7EC9420A1B95200C9B17B /* FeedItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,7 +283,11 @@
 			children = (
 				2C6E72CF20930FBD00F8FD40 /* Feed.storyboard */,
 				2C11E48120935E1300C6D5E7 /* FeedCoordinator.swift */,
+				2CC7EC9820A1BA0900C9B17B /* FeedControllerViewModel.swift */,
+				2CC7EC9620A1B9B000C9B17B /* FeedItemTableViewCell.swift */,
 				2C6E72C720930D9B00F8FD40 /* FeedViewController.swift */,
+				2CC7EC9C20A1C4C300C9B17B /* FeedItemDetailsControllerViewModel.swift */,
+				2CC7EC9A20A1C48700C9B17B /* FeedItemDetailsViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -534,18 +549,23 @@
 				2CC62B74209B4E6C005AB657 /* ForgotPasswordViewController.swift in Sources */,
 				2CEEEBBF2094907C004C60ED /* LaunchInstructor.swift in Sources */,
 				2C6E72C420930D4000F8FD40 /* TabBarController.swift in Sources */,
+				2CC7EC9920A1BA0900C9B17B /* FeedControllerViewModel.swift in Sources */,
+				2CC7EC9520A1B95200C9B17B /* FeedItem.swift in Sources */,
 				2C11E47A20933BCB00C6D5E7 /* AppRouter.swift in Sources */,
 				2CEEEBC22094948F004C60ED /* SplashViewController.swift in Sources */,
 				2C677F8F209C733200CFE940 /* ProfileFlowRunner.swift in Sources */,
 				2C6E72C220930D2000F8FD40 /* NavigationController.swift in Sources */,
+				2CC7EC9B20A1C48700C9B17B /* FeedItemDetailsViewController.swift in Sources */,
 				2C6E72D420930FF400F8FD40 /* Storyboard.swift in Sources */,
 				2C6E72C820930D9B00F8FD40 /* FeedViewController.swift in Sources */,
+				2CC7EC9D20A1C4C300C9B17B /* FeedItemDetailsControllerViewModel.swift in Sources */,
 				2CC62B72209B4E43005AB657 /* RegistrationViewController.swift in Sources */,
 				2C6E72972093099200F8FD40 /* AppDelegate.swift in Sources */,
 				2C6E72CE20930E7500F8FD40 /* Coordinator.swift in Sources */,
 				2C11E48420935FE400C6D5E7 /* FavoritesCoordinator.swift in Sources */,
 				2C11E4862093669100C6D5E7 /* Utils.swift in Sources */,
 				2C677F8B209C6E9E00CFE940 /* ProfileCoordinator.swift in Sources */,
+				2CC7EC9720A1B9B000C9B17B /* FeedItemTableViewCell.swift in Sources */,
 				2C6E72D62093103300F8FD40 /* Defaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
