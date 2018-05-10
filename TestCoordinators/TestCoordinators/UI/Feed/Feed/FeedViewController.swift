@@ -1,6 +1,8 @@
 
 import UIKit
 import Reusable
+import RxSwift
+import RxCocoa
 
 protocol FeedControllerOutput: class {
     var onClickProfile: (() -> Void)? { get set }
@@ -18,6 +20,7 @@ class FeedViewController: AbstractViewController, StoryboardSceneBased, FeedCont
     var onSelectItem: ((FeedItem) -> Void)?
 
     private var viewModel: FeedControllerViewModel!
+    private let disposeBag = DisposeBag()
 
     class func instantiate(with viewModel: FeedControllerViewModel) -> FeedViewController {
         let controller = FeedViewController.instantiate()
@@ -31,6 +34,12 @@ class FeedViewController: AbstractViewController, StoryboardSceneBased, FeedCont
         // Do any additional setup after loading the view.
 
         viewModel.loadItems()
+
+        viewModel.session.user.asDriver()
+            .map { (user) -> String in
+                return user != nil ? "Profile" : "Login"
+            }
+            .drive(self.profileButton.rx.title).disposed(by: self.disposeBag)
     }
 
     @IBAction private func profileAction(_ sender: UIBarButtonItem) {

@@ -8,10 +8,11 @@ protocol AuthCoordinatorOutput: class {
 class AuthCoordinator: NavigationCoordinator, AuthCoordinatorOutput {
     var onFinish: (() -> Void)?
 
-    override init(with router: NavigationRouter) {
-        super.init(with: router)
+    override init(with router: NavigationRouter, session: Session) {
+        super.init(with: router, session: session)
 
-        let controller = LoginViewController.instantiate()
+        let viewModel = LoginControllerViewModel(session: session)
+        let controller = LoginViewController.instantiate(with: viewModel)
 
         controller.onLogin = { [weak self] in
             self?.onFinish?()
@@ -22,7 +23,8 @@ class AuthCoordinator: NavigationCoordinator, AuthCoordinatorOutput {
         }
 
         controller.onClickForgotPassword = { [weak self] in
-            let controller = ForgotPasswordViewController.instantiate()
+            let viewModel = ForgotPasswordControllerViewModel(session: session)
+            let controller = ForgotPasswordViewController.instantiate(with: viewModel)
 
             controller.onSend = { [weak self] in
                 self?.router.popModule()
@@ -32,7 +34,8 @@ class AuthCoordinator: NavigationCoordinator, AuthCoordinatorOutput {
         }
 
         controller.onClickRegister = { [weak self] in
-            let controller = RegistrationViewController.instantiate()
+            let viewModel = RegistrationControllerViewModel(session: session)
+            let controller = RegistrationViewController.instantiate(viewModel: viewModel)
 
             controller.onRegister = { [weak self] in
                 self?.onFinish?()

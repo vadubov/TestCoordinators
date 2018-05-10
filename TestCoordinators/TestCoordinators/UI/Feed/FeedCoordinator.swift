@@ -1,14 +1,16 @@
 
 import UIKit
 
-class FeedCoordinator: NavigationCoordinator, ProfileFlowRunner {
-    override init(with router: NavigationRouter) {
-        super.init(with: router)
+class FeedCoordinator: NavigationCoordinator, ProfileFlowRunner, FeedItemDetailsPresenter {
 
-        let controller = FeedViewController.instantiate(with: FeedControllerViewModel())
+    override init(with router: NavigationRouter, session: Session) {
+        super.init(with: router, session: session)
+
+        let viewModel = FeedControllerViewModel(session: session)
+        let controller = FeedViewController.instantiate(with: viewModel)
 
         controller.onClickProfile = { [weak self] in
-            if Session.shared.isAuthorized {
+            if self?.session.isAuthorized ?? false {
                 self?.runProfileFlow()
             } else {
                 self?.runAuthFlow()
@@ -16,12 +18,8 @@ class FeedCoordinator: NavigationCoordinator, ProfileFlowRunner {
         }
 
         controller.onSelectItem = { [weak self] item in
-            let viewModel = FeedItemDetailsControllerViewModel(with: item)
-            let controller = FeedItemDetailsViewController.instantiate(with: viewModel)
-            self?.router.push(controller)
+            self?.pushItemDetails(with: item)
         }
-
-        router.navigationController.tabBarItem = UITabBarItem(title: "Feed", image: nil, tag: 0)
 
         router.setRootModule(controller)
     }

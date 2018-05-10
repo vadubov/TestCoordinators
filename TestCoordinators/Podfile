@@ -5,6 +5,8 @@ target 'TestCoordinators' do
   use_frameworks!
   
   pod 'Reusable'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   target 'TestCoordinatorsTests' do
     inherit! :search_paths

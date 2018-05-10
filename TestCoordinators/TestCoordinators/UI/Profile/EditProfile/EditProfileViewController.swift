@@ -11,6 +11,14 @@ class EditProfileViewController: AbstractViewController, StoryboardSceneBased, E
 
     var onSave: (() -> Void)?
 
+    private var viewModel: EditProfileControllerViewModel!
+
+    class func instantiate(with viewModel: EditProfileControllerViewModel) -> EditProfileViewController {
+        let controller = EditProfileViewController.instantiate()
+        controller.viewModel = viewModel
+        return controller
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

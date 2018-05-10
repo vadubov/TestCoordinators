@@ -6,8 +6,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    private lazy var session: Session = Session()
     private lazy var appRouter: AppRouter = AppRouter(with: self.window!)
-    private lazy var appCoordinator: AppCoordinator = AppCoordinator(with: self.appRouter)
+    private lazy var appCoordinator: AppCoordinator = AppCoordinator(with: self.appRouter, session: self.session)
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

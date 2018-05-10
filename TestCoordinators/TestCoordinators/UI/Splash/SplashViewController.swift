@@ -11,13 +11,23 @@ class SplashViewController: AbstractViewController, StoryboardSceneBased, Splash
 
     var onFinish: (() -> Void)?
 
+    private var viewModel: SplashControllerViewModel!
+
+    class func instantiate(with viewModel: SplashControllerViewModel) -> SplashViewController {
+        let controller = SplashViewController.instantiate()
+        controller.viewModel = viewModel
+        return controller
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 
         delay(1) { [weak self] in
-            self?.onFinish?()
+            self?.viewModel.loadConfig { [weak self] in
+                self?.onFinish?()
+            }
         }
     }
 

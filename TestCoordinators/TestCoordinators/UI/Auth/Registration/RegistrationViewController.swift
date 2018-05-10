@@ -1,6 +1,7 @@
 
 import UIKit
 import Reusable
+import RxSwift
 
 protocol RegistrationControllerOutput: class {
     var onRegister: (() -> Void)? { get set }
@@ -10,6 +11,14 @@ class RegistrationViewController: AbstractViewController, StoryboardSceneBased, 
     static var sceneStoryboard: UIStoryboard = Storyboard.auth
 
     var onRegister: (() -> Void)?
+
+    private var viewModel: RegistrationControllerViewModel!
+
+    class func instantiate(viewModel: RegistrationControllerViewModel) -> RegistrationViewController {
+        let controller = RegistrationViewController.instantiate()
+        controller.viewModel = viewModel
+        return controller
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +32,8 @@ class RegistrationViewController: AbstractViewController, StoryboardSceneBased, 
     }
 
     @IBAction private func registerAction(_ sender: UIButton) {
-        Session.shared.user = User()
-        onRegister?()
+        viewModel.register { [weak self] in
+            self?.onRegister?()
+        }
     }
 }

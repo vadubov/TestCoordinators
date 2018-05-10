@@ -17,6 +17,14 @@ class LoginViewController: AbstractViewController, StoryboardSceneBased, LoginCo
     var onClickRegister: (() -> Void)?
     var onClickClose: (() -> Void)?
 
+    private var viewModel: LoginControllerViewModel!
+
+    class func instantiate(with viewModel: LoginControllerViewModel) -> LoginViewController {
+        let controller = LoginViewController.instantiate()
+        controller.viewModel = viewModel
+        return controller
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,8 +37,9 @@ class LoginViewController: AbstractViewController, StoryboardSceneBased, LoginCo
     }
 
     @IBAction private func loginAction(_ sender: UIButton) {
-        Session.shared.user = User()
-        onLogin?()
+        viewModel.login { [weak self] in
+            self?.onLogin?()
+        }
     }
 
     @IBAction private func forgotPasswordAction(_ sender: UIButton) {

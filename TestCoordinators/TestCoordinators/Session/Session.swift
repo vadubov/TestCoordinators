@@ -1,14 +1,17 @@
 
 import Foundation
+import RxSwift
 
-final class Session {
-    static let shared = Session()
-
-    var user: User?
+public class Session {
+    let config: Variable<Config?>
+    let user: Variable<User?>
 
     var isAuthorized: Bool {
-        return user != nil
+        return user.value != nil
     }
 
-    private init() {}
+    init() {
+        self.config = Variable(nil)
+        self.user = Variable(nil)
+    }
 }

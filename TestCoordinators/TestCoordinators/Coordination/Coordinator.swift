@@ -3,6 +3,7 @@ import UIKit
 
 public protocol CoordinatorType: class, Presentable {
     associatedtype DeepLinkType
+    associatedtype SessionType
     associatedtype R: RouterType
 
     var router: R { get }
@@ -11,12 +12,14 @@ public protocol CoordinatorType: class, Presentable {
     func start(with deeplink: DeepLinkType?)
 }
 
-public class Coordinator<DeepLinkType, R: RouterType>: NSObject, CoordinatorType {
+public class Coordinator<DeepLinkType, SessionType, R: RouterType>: NSObject, CoordinatorType {
     public let router: R
-    public var childCoordinators: [Coordinator<DeepLinkType, NavigationRouter>] = []
+    public let session: SessionType
+    public var childCoordinators: [Coordinator<DeepLinkType, SessionType, NavigationRouter>] = []
 
-    public init(with router: R) {
+    public init(with router: R, session: SessionType) {
         self.router = router
+        self.session = session
         super.init()
     }
 
@@ -26,11 +29,11 @@ public class Coordinator<DeepLinkType, R: RouterType>: NSObject, CoordinatorType
 
     public func start(with deeplink: DeepLinkType?) {}
 
-    public func addChild(_ coordinator: Coordinator<DeepLinkType, NavigationRouter>) {
+    public func addChild(_ coordinator: Coordinator<DeepLinkType, SessionType, NavigationRouter>) {
         childCoordinators.append(coordinator)
     }
 
-    public func removeChild(_ coordinator: Coordinator<DeepLinkType, NavigationRouter>?) {
+    public func removeChild(_ coordinator: Coordinator<DeepLinkType, SessionType, NavigationRouter>?) {
         guard let coordinator = coordinator, let index = childCoordinators.index(where: { $0 === coordinator }) else {
             return
         }
@@ -43,5 +46,5 @@ public class Coordinator<DeepLinkType, R: RouterType>: NSObject, CoordinatorType
     }
 }
 
-typealias RootCoordinator = Coordinator<DeepLink, AppRouter>
-typealias NavigationCoordinator = Coordinator<DeepLink, NavigationRouter>
+typealias RootCoordinator = Coordinator<DeepLink, Session, AppRouter>
+typealias NavigationCoordinator = Coordinator<DeepLink, Session, NavigationRouter>

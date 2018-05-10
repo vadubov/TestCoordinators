@@ -15,6 +15,14 @@ class ProfileViewController: AbstractViewController, StoryboardSceneBased, Profi
     var onClickEdit: (() -> Void)?
     var onLogout: (() -> Void)?
 
+    private var viewModel: ProfileControllerViewModel!
+
+    class func instantiate(with viewModel: ProfileControllerViewModel) -> ProfileViewController {
+        let controller = ProfileViewController.instantiate()
+        controller.viewModel = viewModel
+        return controller
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,7 +38,8 @@ class ProfileViewController: AbstractViewController, StoryboardSceneBased, Profi
     }
 
     @IBAction private func logoutAction(_ sender: UIButton) {
-        Session.shared.user = nil
-        onLogout?()
+        viewModel.logout { [weak self] in
+            self?.onLogout?()
+        }
     }
 }

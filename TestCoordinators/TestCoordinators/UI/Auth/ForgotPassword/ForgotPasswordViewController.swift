@@ -11,10 +11,18 @@ class ForgotPasswordViewController: AbstractViewController, StoryboardSceneBased
 
     var onSend: (() -> Void)?
 
+    private var viewModel: ForgotPasswordControllerViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+
+    class func instantiate(with viewModel: ForgotPasswordControllerViewModel) -> ForgotPasswordViewController {
+        let controller = ForgotPasswordViewController.instantiate()
+        controller.viewModel = viewModel
+        return controller
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -23,9 +31,15 @@ class ForgotPasswordViewController: AbstractViewController, StoryboardSceneBased
     }
     
     @IBAction private func sendAction(_ sender: UIButton) {
+        viewModel.send { [weak self] in
+            self?.finish()
+        }
+    }
+
+    private func finish() {
         let alert = UIAlertController(title: "Login with your new password", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] (_) in
-            self?.onSend?()
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.onSend?()
         }))
         present(alert, animated: true, completion: nil)
     }

@@ -7,7 +7,7 @@ public protocol ProfileFlowRunner where Self: NavigationCoordinator {
 
 extension ProfileFlowRunner {
     func runProfileFlow() {
-        let coordinator = ProfileCoordinator(with: NavigationRouter())
+        let coordinator = ProfileCoordinator(with: NavigationRouter(), session: session)
 
         coordinator.onFinish = { [weak self] in
             self?.router.dismissModule()

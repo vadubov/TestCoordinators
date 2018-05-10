@@ -11,6 +11,13 @@ class AppCoordinator: RootCoordinator {
 
     enum Tab: Int {
         case feed, favorites
+
+        var title: String {
+            switch self {
+            case .feed: return "Feed"
+            case .favorites: return "Favorites"
+            }
+        }
     }
 
     private lazy var tabBarController: TabBarController = {
@@ -18,9 +25,9 @@ class AppCoordinator: RootCoordinator {
 
         controller.onShouldSelectViewController = { [weak self] (controller) -> Bool in
             if let index = self?.tabBarController.viewControllers?.index(of: controller), let tab = Tab(rawValue: index) {
-                if tab == .favorites, !Session.shared.isAuthorized {
+                if tab == .favorites, !(self?.session.isAuthorized ?? false) {
                     self?.runAuthFlow() { [weak self] in
-                        if Session.shared.isAuthorized {
+                        if self?.session.isAuthorized ?? false {
                             self?.tabBarController.selectedIndex = tab.rawValue
                         }
                     }
@@ -51,7 +58,8 @@ class AppCoordinator: RootCoordinator {
     }
 
     func runSplash() {
-        let controller = SplashViewController.instantiate()
+        let viewModel = SplashControllerViewModel(session: session)
+        let controller = SplashViewController.instantiate(with: viewModel)
 
         controller.onFinish = { [weak self] in
             if let deeplink = self?.deeplink {
@@ -88,8 +96,8 @@ class AppCoordinator: RootCoordinator {
 
     func runMainFlow() {
         let tabs: [TabCoordinatorBox] = [
-            (Tab.feed, FeedCoordinator(with: NavigationRouter())),
-            (Tab.favorites, FavoritesCoordinator(with: NavigationRouter()))
+            (Tab.feed, FeedCoordinator(with: NavigationRouter(), session: session)),
+            (Tab.favorites, FavoritesCoordinator(with: NavigationRouter(), session: session))
         ]
 
         addTabs(tabs)
@@ -103,7 +111,9 @@ class AppCoordinator: RootCoordinator {
 
         let controllers = sorted.map { (box) -> UIViewController in
             self.tabs[box.tab] = box.coordinator
-            return box.coordinator.toPresentable()
+            let controller = box.coordinator.toPresentable()
+            controller.tabBarItem = UITabBarItem(title: box.tab.title, image: nil, tag: box.tab.rawValue)
+            return controller
         }
 
         tabBarController.viewControllers = controllers

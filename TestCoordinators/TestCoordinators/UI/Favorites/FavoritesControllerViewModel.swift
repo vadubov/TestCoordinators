@@ -1,11 +1,16 @@
 
 import UIKit
 
-class FeedControllerViewModel {
+class FavoritesControllerViewModel {
+    let session: Session
     private(set) var items: [FeedItem]?
 
+    init(session: Session) {
+        self.session = session
+    }
+
     func loadItems() {
-        items = (0..<10).map({ FeedItem(firstName: "First\($0)", lastName: "Last\($0)") })
+        items = (0..<3).map({ FeedItem(firstName: "First\($0)", lastName: "Last\($0)") })
     }
 
     func configureItemCell(_ cell: FeedItemTableViewCell, indexPath: IndexPath) {
